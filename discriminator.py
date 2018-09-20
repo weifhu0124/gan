@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-def discriminator(image, reuse=True):
+def discriminator(image, reuse=False):
     with tf.variable_scope(tf.get_variable_scope(), reuse=reuse) as scope:
         # input 28x28x1
         # convolution layer 5x5x32
