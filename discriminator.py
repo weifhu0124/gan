@@ -26,9 +26,14 @@ def discriminator(image, reuse=True):
         # output 7x7x64
 
         # fully connected layer
+        weight3 = tf.get_variable('d_weight3', [7*7*64, 1024], initializer=tf.truncated_normal_initializer(stddev=0.01))
+        bias3 = tf.get_variable('d_bias3', [1024], initializer=tf.constant_initializer(0))
         tensor2_flat = tf.reshape(tensor2, [-1, 7*7*64])
-        tensor3 = tf.layers.dense(inputs=tensor2_flat, units=1024, activation=tf.nn.relu)
+        tensor3 = tf.matmul(tensor2_flat, weight3) + bias3
+        tensor3 = tf.nn.relu(tensor3)
 
         # fully connected layer
-        tensor4 = tf.layers.dense(inputs=tensor3, units=2)
+        weight4 = tf.get_variable('d_weight4', [1024, 1], initializer=tf.truncated_normal_initializer(stddev=0.01))
+        bias4 = tf.get_variable('d_bias4', [1], initializer=tf.constant_initializer(0))
+        tensor4 = tf.matmul(tensor3, weight4) + bias4
         return tensor4
