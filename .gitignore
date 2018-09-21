@@ -2,5 +2,4 @@ venv/
 .idea/
 *.pyc
 MNIST_data/
-model/
 .DS_Store
