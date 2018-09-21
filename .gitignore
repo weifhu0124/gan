@@ -1,2 +1,5 @@
 venv/
 .idea/
+*.pyc
+MNIST_data/
+model/
