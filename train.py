@@ -11,7 +11,7 @@ learning_rate_d = 0.0003
 noise_dim = 100
 batch_size = 50
 discriminator_pre_train_loop = 300
-train_loop = 1000
+train_loop = 2000
 
 # load data
 mnist = load_data()
@@ -54,6 +54,11 @@ tf.get_variable_scope().reuse_variables()
 # open a session
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
+saver = tf.train.Saver()
+# restore model from previous training - we can train 100 loops at first, then
+# we run another 100 loops. With following restore code we train a total of 200 loops
+saver.restore(sess, 'model/mnist_gan.ckpt')
+
 print('pre-train discriminator...')
 # pre-train discriminator
 for i in range(0, discriminator_pre_train_loop):
@@ -68,7 +73,6 @@ for i in range(0, discriminator_pre_train_loop):
     d_loss_real = tf.cast(d_loss_real, tf.float32)
     d_loss_fake = tf.cast(d_loss_fake, tf.float32)
 
-saver = tf.train.Saver()
 print('training...')
 # training
 for i in range(0, train_loop):
