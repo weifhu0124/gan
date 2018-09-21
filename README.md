@@ -16,3 +16,11 @@ Tensorflow Tutorial MNIST dataset
 ![Real Image 1](result/real/0.png)
 ![Real Image 2](result/real/1.png)
 ![Real Image 3](result/real/2.png)  
+### Generated MNIST Images Before Training
+![Noise Image 1](result/noise/0.png)
+![Noise Image 2](result/noise/1.png)
+![Noise Image 3](result/noise/2.png)    
+### Generated MNIST Images After Training
+![Generate Image 1](result/generated/0.png)
+![Generate Image 2](result/generated/1.png)
+![Generate Image 3](result/generated/2.png)  
