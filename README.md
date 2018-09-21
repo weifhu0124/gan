@@ -12,6 +12,7 @@ inference.py: generate MNIST images
 ## Dataset:
 Tensorflow Tutorial MNIST dataset  
 ## Result:
+After training cumulatively for 10000 iterations  
 ### Real MNIST Images  
 ![Real Image 1](result/real/0.png)
 ![Real Image 2](result/real/1.png)
