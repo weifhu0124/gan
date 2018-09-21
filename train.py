@@ -57,6 +57,7 @@ sess.run(tf.global_variables_initializer())
 saver = tf.train.Saver()
 # restore model from previous training - we can train 100 loops at first, then
 # we run another 100 loops. With following restore code we train a total of 200 loops
+# COMMENT OUT IF YOU WANT TO TRAIN FROM BEGINNING
 saver.restore(sess, 'model/mnist_gan.ckpt')
 
 print('pre-train discriminator...')
