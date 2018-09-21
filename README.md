@@ -13,6 +13,6 @@ inference.py: generate MNIST images
 Tensorflow Tutorial MNIST dataset  
 ## Result:
 ### Real MNIST Images  
-![Real Image 1](https://github.com/weifhu0124/gan/tree/master/result/real/0.png)  
+![Real Image 1](result/real/0.png)  
 ![Real Image 2](https://github.com/weifhu0124/gan/tree/master/result/real/1.png)  
 ![Real Image 3](https://github.com/weifhu0124/gan/tree/master/result/real/2.png)  
